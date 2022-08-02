@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "cinttypes": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "exception": "cpp",
+        "functional": "cpp",
+        "numeric": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp",
+        "streambuf": "cpp"
+    }
+}
