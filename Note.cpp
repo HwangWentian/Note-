@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
+#include <json/json.h>
 using namespace std;
 
 string getInput()
 {
     string Input, line;
     bool mark = true;
-    int lineLength;
+    int lineLength = 0;
     cout << "Type \"eND~\" to end typing.\n";
     do
     {
@@ -17,7 +18,7 @@ string getInput()
             mark = false;
         }
         else
-            Input += line;
+            Input += line + '\n';
     } while (mark);
     return Input;
 }
@@ -25,9 +26,14 @@ string getInput()
 string getTime()
 {
     time_t t = time(0);
-    char tmp[32] = {NULL};
+    char tmp[18];
     strftime(tmp, sizeof(tmp), "%Y-%m-%d %H:%M:%S", localtime(&t));
     return tmp;
+}
+
+void saveNotes()
+{
+
 }
 
 class Note
@@ -68,23 +74,27 @@ void Note::listRecentNotes()
     {
         for (int i = 0; i < quantityOfNotes; i++)
         {
-            cout << i + 1 << notes[quantityOfNotes][0] << endl;
-            cout << "_-_-_-_-_-_-_-_-_" << notes[quantityOfNotes][1] << endl;
+            cout << i + 1 << '*' << notes[i][0] << endl;
+            cout << " *" << notes[i][1] << endl;
         }
     }
     else
     {
         for (int i = 0; i < 5; i++)
         {
-            cout << i + 1 << notes[quantityOfNotes][0] << endl;
-            cout << "_-_-_-_-_-_-_-_-_" << notes[quantityOfNotes][1] << endl;
+            cout << i + 1 << '*' << notes[i][0] << endl;
+            cout << " *" << notes[i][1] << endl;
         }
     }
 }
 
 int main()
 {
-    cout<<a;
+    fstream fileIOStream;
+    fileIOStream.open("Notes.dat");
+    fileIOStream.close();
     Note myNote;
+    myNote.addOneNote();
+    myNote.listRecentNotes();
     return 0;
 }

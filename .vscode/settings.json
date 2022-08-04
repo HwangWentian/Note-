@@ -11,6 +11,7 @@
         "istream": "cpp",
         "limits": "cpp",
         "ratio": "cpp",
-        "streambuf": "cpp"
+        "streambuf": "cpp",
+        "ostream": "cpp"
     }
 }
